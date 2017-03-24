@@ -1,0 +1,26 @@
+<!-- <div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Save changes</a>
+  </div>
+</div> -->
+
+<div class="modal fade" id="zipModal">
+	<div class="modal-body">
+	<form id="zipFormId" #zipForm="ngForm" >
+	   <a class="dropdown-item">Enter your ZIP code to find your delivery area</a>
+	   <div class="">
+	   	  <p *ngIf="!isValidZip">No support in this area</p>
+	      <input required type="text" name="zipCodeName" id="zipCodeId" placeholder="Ex: 75035" class="form-control" [(ngModel)] = "zipCode">
+	      <button class="submitpincode" type="button" (click)="validateZip()">SUBMIT</button>
+	   </div>
+	   </form>
+   </div>
+</div>
