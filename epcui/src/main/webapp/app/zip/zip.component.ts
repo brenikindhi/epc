@@ -3,6 +3,8 @@ import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ZipService} from './zip.service';
 
+declare var $: JQueryStatic;
+
 @Component({
     selector: 'zip',
     moduleId: module.id,
@@ -26,13 +28,20 @@ export class ZipComponent {
 			)
 	}    
 	
-	handleResponse(result){
-		console.log('zip response: ' + result);
-		this.isValidZip = result.active;
+	handleResponse(response: any){
+		console.log('zip response: ' + JSON.stringify(response));
+		this.isValidZip = response.active;
+		if(this.isValidZip){
+			console.log('valid zip');
+			$('#zipModal').modal('hide');
+		}
 	}
 	
-	handleError(error){
-		console.log(error);
+	handleError(response : any){
+		console.log('zip validation : ' + response._body);
+		if(response.status === 404){
+			this.isValidZip = false;
+		}
 	}
     
 }

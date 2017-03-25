@@ -13,8 +13,8 @@ export class ZipService{
 	
 	}
 	
-	validateZip(zip): Observable<any>{
-		let url = 'http://epc-env.us-east-1.elasticbeanstalk.com/EPCProductMgmt/api/location/' + zip;
+	validateZip(zip: any): Observable<any>{
+		let url = 'http://epc-env.us-east-1.elasticbeanstalk.com/EPCProductMgmt/api/location/?zip=' + zip;
 		return this._http.get(url)
 					.map(result => result.json());
 	}
