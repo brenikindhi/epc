@@ -12,11 +12,12 @@ import { HotCategoriesComponent }  from './hot-categories/hot-categories.compone
 import { FooterComponent }  from './footer/footer.component';
 import { ZipComponent }  from './zip/zip.component';
 import { ZipService }  from './zip/zip.service';
+import { EPCSessionStorage } from './utils/service/epc-session-storage.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule , HttpModule],
   declarations: [ AppComponent,MainMenuComponent, DashboardComponent, FooterComponent, HotCategoriesComponent, AdBannersComponent, ZipComponent],
-  providers : [ ZipService ],
+  providers : [ ZipService, EPCSessionStorage],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
