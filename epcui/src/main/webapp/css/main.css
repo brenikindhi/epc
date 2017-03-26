@@ -1,4 +1,27 @@
  
+
+@media (min-width: 768px) {
+  .modal-dialog-zip { width: 400px !important; margin: 15% auto; }
+}
+
+.modal-dialog-zip > .modal-content >.modal-body {padding: 20px; text-align: center;}
+.modal-dialog-zip > .modal-content { border-radius: 15px; }
+.modal-dialog-zip input[type=text] {
+  padding: 6px 12px;  border: 1px solid #ccc; border-radius: 2px; font-family: Lato, sans-serif; font-size: 16px; font-weight: normal; 
+} 
+.modal-dialog-zip .zipsubmit {
+      background: #4285f4; color: #fff; font-size: 12px; border: 0; text-transform: uppercase; height: 36px; margin-left: 10px; line-height: normal; vertical-align: top; border-radius: 2px; padding: 0 30px; }
+@media (max-width: 400px) {
+  .modal-dialog-zip {margin: 25% auto;}
+
+  .modal-dialog-zip input[type=text] {width: 100%;}
+
+      .modal-dialog-zip .zipsubmit {
+        width: 100%; margin: 10px 0 0 0;
+      }
+
+
+}
 .navbar-logo {padding: 5px 0; display: block; text-align: left; width: auto; float: left; }
 .no-margin {margin: 0 !important; } 
 .no-padding {padding: 0 !important; }
@@ -318,7 +341,7 @@ div.horizontal ul.megamenu .sub-menu a {
     min-width: 1170px; } }
 
 header .so-megamenu .navbar-header {
-  color: white; }
+  color: white; text-indent: 99999px;}
 
 @media (min-width: 992px) {
   div.so-vertical-menu {
@@ -760,6 +783,15 @@ STRUCTURE
   .shopping_cart .table-bordered > tbody > tr > td, .shopping_cart .table-bordered > tbody > tr > th, .shopping_cart .table-bordered > tfoot > tr > td,
   .shopping_cart .table-bordered > tfoot > tr > th, .shopping_cart .table-bordered > thead > tr > td, .shopping_cart .table-bordered > thead > tr > th {
     border: 0; }
+
+
+.cart_products {}
+.cart_products .cart_product_name, .cart_products .table.table-bordered .cart_total_section, .cart_products .table.table-bordered .cart_unit_qty{font-size: 16px;}
+.cart_products .table.table-bordered td{padding: 20px 15px;}
+.cart_products .table.table-bordered .cart_quantity{width: 180px;}
+.cart_products .table.table-bordered .cart_unit_qty{}
+.cart_products .table.table-bordered .cart_total_section{}
+
 
 .latest-product .product-latest-item {
   margin-bottom: 20px; }
