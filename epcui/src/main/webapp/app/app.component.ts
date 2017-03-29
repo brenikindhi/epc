@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ElementRef, AfterViewInit }   from '@angular/core';
+import { Component , OnInit, ElementRef, AfterViewInit } from '@angular/core';
+import { Router }  from '@angular/router';
 declare var $: JQueryStatic;
 
 @Component({
@@ -7,12 +7,19 @@ declare var $: JQueryStatic;
   moduleId: module.id,
   templateUrl: 'app.template.html'
 })
-export class AppComponent implements AfterViewInit { 
+export class AppComponent implements AfterViewInit, OnInit { 
 
-    constructor(private _elementRef: ElementRef){}
+    constructor(private _elementRef: ElementRef, private _router: Router){}
     
     ngAfterViewInit() {
-        $('#zipModal').modal('show');
+        // window.homepagebanner();
+        // window.homestorelistslider()
+        //window.responsiveLayout();
+        
+    }
+
+    ngOnInit(){
+        this._router.navigate(['/home']);
     }
  
 }
