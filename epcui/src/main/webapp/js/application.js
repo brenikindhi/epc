@@ -62,7 +62,7 @@ $('.dropdown-toggle b').remove().appendTo($('.dropdown-toggle').text($(this).tex
 -------------------------------------------------- */
 
 $(window).on("load", function() {
-    responsiveLayout();
+    //responsiveLayout();
 });
 
  // responsiveLayout Menu
@@ -231,7 +231,7 @@ $(function ($) {
 /* ---------------------------------------------------
 	Home & Details Page Product Scroll
 -------------------------------------------------- */
-$(document).ready(function($) {
+/*$(document).ready(function($) {
 	$('.releate-products').owlCarousel2({
 		pagination: false,
 		center: false,
@@ -266,7 +266,43 @@ $(document).ready(function($) {
 		}
 	});	 
 	 
+});*/
+
+function homestorelistslider (){
+	$('.releate-products').owlCarousel2({
+		pagination: false,
+		center: false,
+		items:5,
+		nav: true,
+		dots: false,
+		loop: true,
+		margin: 25,
+		navText: [ 'prev', 'next' ],
+		slideBy: 1,
+		autoplay: false,
+		autoplayTimeout: 2500,
+		autoplayHoverPause: true,
+		autoplaySpeed: 800,
+		startPosition: 0, 
+		responsive:{
+			0:{
+				items:2
+			},
+			480:{
+				items:3
+			},
+			768:{
+				items:4
+			},
+			1024:{
+				items:5
+			},
+			1200:{
+				items:6
+			}
+		}	 	  
 });
+}
 
 /* ---------------------------------------------------
 	Thumb Slider Product Details
