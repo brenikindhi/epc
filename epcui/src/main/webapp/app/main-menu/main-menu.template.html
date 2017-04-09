@@ -327,11 +327,11 @@
 
                                  <!--Start Pincode Dropdown -->
                                  <li class="account btn-group" id="pincode">
-                                    <a href="javascript:void(0);" title="Pincode" class="btn btn-xs dropdown-toggle" data-toggle="dropdown" type="button"> <span class="fa fa-map-marker"></span><b>75035</b></a>
+                                    <a href="javascript:void(0);" title="Pincode" class="btn btn-xs dropdown-toggle" data-toggle="dropdown" type="button"> <span class="fa fa-map-marker"></span><b>{{zipCode}}</b></a>
                                     <div class="dropdown-menu">
                                        <a class="dropdown-item">Enter your ZIP code to find your delivery area</a>
                                        <div class="">
-                                          <input type="text" name="pincode" value="" placeholder="Ex: 75035" class="form-control inputarea">
+                                          <input type="number" name="pincode" [(ngModel)] = "zipCode" placeholder="Ex: 75035" class="form-control inputarea">
                                           <button class="submitpincode" type="button">SUBMIT</button>
                                        </div>
                                     </div>

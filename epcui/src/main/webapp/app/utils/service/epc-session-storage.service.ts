@@ -1,22 +1,24 @@
 import {Injectable, Inject} from '@angular/core';
 import {Http} from '@angular/http';
 import {Product} from '../../products/product.data';
+import { EPCEmitterService } from './epc-emitter.service';
 
 // import * as _ from 'underscore';
 
 @Injectable()
 export class EPCSessionStorage{
 	
-	constructor(){
+	constructor(private _epcEmitter : EPCEmitterService){
         
     }
 	
     setZipCode(zip: any){
-        sessionStorage.zipCode = zip;
+        sessionStorage.setItem('zipCode', zip);
+        this._epcEmitter.emitZipChangeEvent(zip);
     }
 
     getZipCode(){
-        return sessionStorage.zipCode;
+        return JSON.parse(sessionStorage.getItem('zipCode'));
     }
 
     addProduct(product : any){

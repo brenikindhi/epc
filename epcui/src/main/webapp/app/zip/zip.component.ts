@@ -13,7 +13,7 @@ declare var $: JQueryStatic;
     })
 export class ZipComponent {
 
-	private zipCode : string = '';
+	private zipCode : number;
 	private isValidZip : boolean = true;
 	
 	constructor(private _zipService : ZipService, private _epcSessionStorage: EPCSessionStorage){}
@@ -37,7 +37,7 @@ export class ZipComponent {
 			$('#zipModal').modal('hide');
 			this._epcSessionStorage.setZipCode(this.zipCode);
 		}
-		console.log('stored zip.. ' + this._epcSessionStorage.getZipCode());
+		
 	}
 	
 	handleError(response : any){

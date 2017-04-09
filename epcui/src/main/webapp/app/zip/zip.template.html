@@ -24,7 +24,7 @@
 
 
 <div class="modal fade" id="zipModal" role="dialog">
-    <div class="modal-dialog modal-dialog-zip">
+    <div class="modal-dialog-zip modal-dialog">
     <form id="zipFormId" #zipForm="ngForm">
       <!-- Modal content-->
       <div class="modal-content">
@@ -35,7 +35,7 @@
         <div class="modal-body">
           <p *ngIf="!isValidZip" class="dropdown-item errormsg">No support in this area</p>
           <p>
-             <input required type="text" name="zipCodeName" id="zipCodeId" placeholder="Ex: 75035" class="form-control" [(ngModel)]="zipCode">
+             <input required type="number" name="zipCodeName" id="zipCodeId" placeholder="Ex: 75035"  [(ngModel)]="zipCode">
              <!--<input type="button" class="zipsubmit" (click)="validateZip()">SUBMIT</input>-->
              <button type="button" class="zipsubmit"  (click)="validateZip()">SUBMIT</button>
           </p>

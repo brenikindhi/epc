@@ -269,6 +269,7 @@ $(function ($) {
 });*/
 
 function homestorelistslider (){
+	"use strict";
 	$('.releate-products').owlCarousel2({
 		pagination: false,
 		center: false,

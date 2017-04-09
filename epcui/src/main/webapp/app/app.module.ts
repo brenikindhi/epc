@@ -17,7 +17,7 @@ import { ZipComponent }  from './zip/zip.component';
 import { ZipService }  from './zip/zip.service';
 import { EPCSessionStorage } from './utils/service/epc-session-storage.service';
 import { HomeComponent } from './home/home.component';
-
+import { EPCEmitterService } from './utils/service/epc-emitter.service';
 
 const appRoutes: Routes = [
  { path: 'init', component: AppComponent },
@@ -29,7 +29,7 @@ const appRoutes: Routes = [
   imports:      [ BrowserModule, FormsModule , HttpModule, RouterModule.forRoot(appRoutes)],
   declarations: [ AppComponent, HomeComponent, MainMenuComponent, DashboardComponent, FooterComponent, 
                   HotCategoriesComponent, ProductsComponent, ZipComponent],
-  providers : [ {provide: LocationStrategy, useClass: HashLocationStrategy}, ZipService,ProductsService,EPCSessionStorage ],
+  providers : [ {provide: LocationStrategy, useClass: HashLocationStrategy}, ZipService,ProductsService,EPCSessionStorage, EPCEmitterService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
