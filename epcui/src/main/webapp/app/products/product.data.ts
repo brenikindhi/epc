@@ -1,6 +1,8 @@
 export class Product{
     public productId : string;
-    constructor(productId: string){
+    public quantity: number;
+    constructor(productId: string, quantity: number){
         this.productId = productId;
+        this.quantity = quantity;
     }
 }

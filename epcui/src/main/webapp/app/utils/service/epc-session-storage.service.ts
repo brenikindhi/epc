@@ -3,7 +3,7 @@ import {Http} from '@angular/http';
 import {Product} from '../../products/product.data';
 import { EPCEmitterService } from './epc-emitter.service';
 
-// import * as _ from 'underscore';
+ import * as _ from 'underscore';
 
 @Injectable()
 export class EPCSessionStorage{
@@ -21,19 +21,24 @@ export class EPCSessionStorage{
         return JSON.parse(sessionStorage.getItem('zipCode'));
     }
 
-    addProduct(product : any){
+    addProductToCart(product : any){
         var products : Product[]=  [];
         // if(_.isUndefined(sessionStorage.products) || _.isNull(sessionStorage.products)){
         if(JSON.parse(sessionStorage.getItem('cart')) !== null ){
              products = JSON.parse(sessionStorage.getItem('cart'));
-         }
+        }
 
-        products.push(product);
+        let findProduct = _.where(products, {productId: product.productId});
+        if(!_.isNull(findProduct) && !_.isUndefined(findProduct) && findProduct.length > 0){
+            findProduct[0].quantity = findProduct[0].quantity + product.quantity;
+        } else{
+            products.push(product);
+        }
         sessionStorage.setItem('cart', JSON.stringify(products));
 
     }
 
-    getProducts(){
+    getCartProducts(){
         return JSON.parse(sessionStorage.getItem('cart'));
     }
 	

@@ -5,6 +5,8 @@ import {ProductsService} from './products.service';
 import { EPCSessionStorage } from '.././utils/service/epc-session-storage.service';
 import {Product} from './product.data';
 
+import * as _ from 'underscore';
+
 @Component({
     selector: 'products',
     moduleId: module.id,
@@ -35,10 +37,10 @@ export class ProductsComponent {
     }
     
     addToCart(productId : string){
-        let product = new Product(productId);
-        this._epcStorageService.addProduct(product);
+        let product = new Product(productId,1);
+        this._epcStorageService.addProductToCart(product);
 
-        //console.log('Products in cart: '+ this._epcStorageService.getProducts());
+        console.log('Products in cart: '+ this._epcStorageService.getCartProducts());
     }
 
 }

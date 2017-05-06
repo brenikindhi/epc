@@ -20,6 +20,8 @@ import { HomeComponent } from './home/home.component';
 import { EPCEmitterService } from './utils/service/epc-emitter.service';
 import { LoginComponent } from './login/login.component';
 
+import {CarouselModule} from 'primeng/primeng';
+
 const appRoutes: Routes = [
  { path: 'init', component: AppComponent },
   { path: 'home', component: HomeComponent },
@@ -27,7 +29,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule , HttpModule, RouterModule.forRoot(appRoutes)],
+  imports:      [ BrowserModule, FormsModule , HttpModule, RouterModule.forRoot(appRoutes), CarouselModule],
   declarations: [ AppComponent, HomeComponent, MainMenuComponent, DashboardComponent, FooterComponent, 
                   HotCategoriesComponent, ProductsComponent, ZipComponent, LoginComponent],
   providers : [ {provide: LocationStrategy, useClass: HashLocationStrategy}, ZipService,ProductsService,EPCSessionStorage, EPCEmitterService ],
